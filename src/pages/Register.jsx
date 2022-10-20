@@ -1,14 +1,22 @@
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import { register, reset } from '../features/auth/authSlice';
+import Spinner from '../components/Spinner';
+
 function Register() {
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     password2: '',
   });
 
   const {
-    first_name, last_name, email, password, password2,
+    firstName, lastName, email, password, password2,
   } = formData;
 
   const navigate = useNavigate();
@@ -46,8 +54,8 @@ function Register() {
       toast.error('Passwords do not match');
     } else {
       const userData = {
-        first_name,
-        last_name,
+        firstName,
+        lastName,
         email,
         password,
       };
@@ -79,7 +87,7 @@ function Register() {
               className="form-control"
               id="first_name"
               name="first_name"
-              value={first_name}
+              value={firstName}
               placeholder="Enter your first name"
               onChange={onChange}
             />
@@ -90,7 +98,7 @@ function Register() {
               className="form-control"
               id="last_name"
               name="last_name"
-              value={last_name}
+              value={lastName}
               placeholder="Enter your last name"
               onChange={onChange}
             />
