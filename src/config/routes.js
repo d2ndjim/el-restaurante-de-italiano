@@ -1,16 +1,18 @@
-import Register from "../pages/Register";
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 const routesConfig = [
   {
-    path: "/",
+    path: '/',
     element: <Home />,
   },
   {
-    path: "/login",
+    path: '/login',
     element: <Login />,
   },
   {
-    path: "/register",
+    path: '/register',
     element: <Register />,
   },
 //   {
