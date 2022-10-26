@@ -11,14 +11,6 @@ body {
   height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-p {
-  line-height: 1.7;
-}
 
 ul {
   list-style: none;
@@ -28,12 +20,6 @@ li {
   line-height: 2.2;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
 
 .container {
   width: 100%;
@@ -41,38 +27,6 @@ h3 {
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
-}
-
-.header ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header ul li {
-  margin-left: 20px;
-}
-
-.header ul li a {
-  display: flex;
-  align-items: center;
-}
-
-.header ul li a:hover {
-  color: #777;
-}
-
-.header ul li a svg {
-  margin-right: 5px;
 }
 
 .heading {
@@ -84,28 +38,6 @@ h3 {
 
 .heading p {
   color: #828282;
-}
-
-.goals {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.goal {
-  background-color: #f4f4f4;
-  margin: 10px 0;
-  padding: 20px 0 10px;
-  position: relative;
-}
-
-.goal .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  border: none;
-  background: none;
 }
 
 .form,
