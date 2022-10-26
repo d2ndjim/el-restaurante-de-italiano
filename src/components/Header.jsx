@@ -16,8 +16,8 @@ function Header() {
   };
 
   return (
-    <header className="">
-      <div className="top-header hidden md:flex md:justify-between md:text-[#A1A1A2] md:px-36 md:py-4 md:font-bold">
+    <header className="hidden md:block">
+      <div className="top-header flex justify-between text-[#A1A1A2] px-36 py-4 font-bold">
         <div className="flex gap-2 items-center">
           <HiOutlinePhone className="text-2xl" />
           <a id="phone" href="tel:09098760067">
@@ -32,7 +32,7 @@ function Header() {
         </div>
         <p>Open hours: Monday - Sunday 8:00AM - 9:00PM</p>
       </div>
-      <nav className="hidden md:flex md:gap-x-96 md:items-center md:px-36 md:py-8 md:text-white">
+      <nav className="flex gap-x-96 items-center px-36 py-8 text-white">
         <h3 className="text-2xl font-extrabold">Feliciano</h3>
         <ul className="flex gap-x-12 text-lg font-semibold">
           {user ? (
@@ -73,47 +73,6 @@ function Header() {
           )}
         </ul>
       </nav>
-      <div className="md:hidden">
-        <h3 className="text-2xl font-extrabold">Feliciano</h3>
-        <ul className="flex gap-x-12 text-lg font-semibold">
-          {user ? (
-            <>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/menu">Menu</Link>
-              </li>
-              <li>
-                <Link to="/orders">My Orders</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-              <li>
-                <button type="button" onClick={onLogout}>
-                  Logout
-                </button>
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/register">Register</Link>
-              </li>
-            </>
-          )}
-        </ul>
-      </div>
     </header>
   );
 }
