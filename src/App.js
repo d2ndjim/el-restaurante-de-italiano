@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Aos from 'aos';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -14,11 +15,10 @@ import Orders from './pages/Orders';
 import 'aos/dist/aos.css';
 
 function App() {
-
-  function App() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
   return (
     <>
       <Router>

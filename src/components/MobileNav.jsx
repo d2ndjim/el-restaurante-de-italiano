@@ -34,11 +34,7 @@ function MobileNav() {
           </button>
         </div>
         {isOpen && (
-          <div
-            className={`${
-              isOpen ? 'translate-x-0' : 'translate-x-full'
-            } ease-in-out duration-300`}
-          >
+          <div data-aos="fade-down">
             <ul className="flex flex-col text-[#808291] gap-4 ml-4 text-lg font-medium pb-2">
               {user ? (
                 <>
