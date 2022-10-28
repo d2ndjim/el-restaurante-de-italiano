@@ -49,7 +49,7 @@ function Header() {
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
-              <li>
+              <li className="border-solid border-1 bg-[#C8A97E] px-8 py-1 self-center rounded-lg text-center">
                 <button type="button" onClick={onLogout}>
                   Logout
                 </button>
@@ -58,15 +58,15 @@ function Header() {
           ) : (
             <>
               <li>
-                <Link to="/home">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
-              <li>
+              <li className="border-solid border-1 bg-[#C8A97E] px-8 py-1 self-center rounded-lg">
                 <Link to="/login">Login</Link>
               </li>
-              <li>
+              <li className="border-solid border-1 bg-[#C8A97E] px-8 py-1 self-center rounded-lg">
                 <Link to="/register">Register</Link>
               </li>
             </>

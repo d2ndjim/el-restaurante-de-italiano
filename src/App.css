@@ -7,10 +7,14 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   height: 100vh;
 }
 
+.abt {
+  height: 80vh;
+  width: 48%
+}
 
 ul {
   list-style: none;
@@ -144,5 +148,11 @@ li {
 
   .heading p {
     font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .abt {
+    width: 50%;
   }
 }

@@ -15,6 +15,10 @@
   animation-timing-function: ease-in-out;
 }
 
+.feliciano {
+  font-family: "Great Vibes", cursive;
+}
+
 @keyframes animate {
   0% {
     background-image: url(../assets/images/home2.jpg);
