@@ -1,5 +1,6 @@
 import About from '../components/About';
 import Header from '../components/Header';
+import HomeMenu from '../components/HomeMenu';
 import MobileNav from '../components/MobileNav';
 import Services from '../components/Services';
 
@@ -30,6 +31,7 @@ function Home() {
       </div>
       <About />
       <Services />
+      <HomeMenu />
     </div>
   );
 }
