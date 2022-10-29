@@ -1,13 +1,14 @@
 import About from '../components/About';
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
+import Services from '../components/Services';
 
 import Styles from './Home.module.css';
 
 function Home() {
   return (
     <div className="main">
-      <div className={`${Styles.content}`}>
+      <div className={`${Styles.content} w-full`}>
         <Header />
         <MobileNav />
         <div className="flex flex-col justify-center my-28 md:my-0">
@@ -28,6 +29,7 @@ function Home() {
         </div>
       </div>
       <About />
+      <Services />
     </div>
   );
 }
