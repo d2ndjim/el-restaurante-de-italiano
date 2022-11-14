@@ -1,46 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import menuService from './menuService';
 
-const initialState = {
-  isError: false,
-  isSuccess: false,
-  isLoading: false,
-  homeMenu: [],
-};
+const API_URL = 'http://localhost:3000/home_menu';
 
 export const fetchHomeMenu = createAsyncThunk(
   'menu/fetchHomeMenu', async () => {
-    const response = await menuService.fetchHomeMenu();
-    return response;
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    return data;
   },
 );
 
-/* eslint-disable no-param-reassign */
 export const menuSlice = createSlice({
   name: 'homeMenu',
-  initialState,
-  reducers: {
-    reset: (state) => {
-      state.isLoading = false;
-      state.isSuccess = false;
-      state.isError = false;
-      state.message = '';
-    },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchHomeMenu.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(fetchHomeMenu.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.homeMenu = action.payload;
-      })
-      .addCase(fetchHomeMenu.rejected, (state) => {
-        state.isLoading = false;
-        state.isError = true;
-      });
+  initialState: [],
+  reducers: {},
+  extraReducers: {
+    [fetchHomeMenu.fulfilled]: (state, action) => action.payload,
   },
 });
 

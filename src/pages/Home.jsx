@@ -1,4 +1,5 @@
 import About from '../components/About';
+import Chef from '../components/Chef';
 import Header from '../components/Header';
 import HomeMenu from '../components/HomeMenu';
 import MobileNav from '../components/MobileNav';
@@ -32,6 +33,7 @@ function Home() {
       <About />
       <Services />
       <HomeMenu />
+      <Chef />
     </div>
   );
 }
