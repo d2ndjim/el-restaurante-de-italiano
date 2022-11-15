@@ -11,7 +11,7 @@ function Chef() {
         <h3 className="text-4xl md:text-7xl font-bold">Our Master Chef</h3>
       </div>
       <div className="flex flex-col gap-6 md:grid md:grid-cols-4 place-items-center">
-        <div className="flex flex-col justify-between gap-4">
+        <div className="flex flex-col justify-between gap-4" data-aos="fade-up">
           <img
             src={owner}
             alt={owner}
@@ -20,7 +20,7 @@ function Chef() {
           <p className="text-xl font-bold">John Smooth</p>
           <p className="text-base text-[#B2B2B2]">Restaurant Owner</p>
         </div>
-        <div className="flex flex-col justify-between gap-4">
+        <div className="flex flex-col justify-between gap-4" data-aos="fade-up">
           <img
             src={headChef}
             alt={headChef}
@@ -29,7 +29,7 @@ function Chef() {
           <p className="text-xl font-bold">Rebecca Welson</p>
           <p className="text-base text-[#B2B2B2]">Head Chef</p>
         </div>
-        <div className="flex flex-col justify-between gap-4">
+        <div className="flex flex-col justify-between gap-4" data-aos="fade-up">
           <img
             src={Chef1}
             alt={Chef1}
@@ -38,7 +38,7 @@ function Chef() {
           <p className="text-xl font-bold">Kharl Branyt</p>
           <p className="text-base text-[#B2B2B2]">Chef</p>
         </div>
-        <div className="flex flex-col justify-between gap-4">
+        <div className="flex flex-col justify-between gap-4" data-aos="fade-up">
           <img
             src={Chef2}
             alt={Chef2}

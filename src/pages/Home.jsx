@@ -1,8 +1,10 @@
 import About from '../components/About';
 import Chef from '../components/Chef';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import HomeMenu from '../components/HomeMenu';
 import MobileNav from '../components/MobileNav';
+import Reservation from '../components/Reservation';
 import Services from '../components/Services';
 
 import Styles from './Home.module.css';
@@ -34,6 +36,8 @@ function Home() {
       <Services />
       <HomeMenu />
       <Chef />
+      <Reservation />
+      <Footer />
     </div>
   );
 }
