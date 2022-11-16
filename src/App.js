@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-// import Header from './components/Header';
 import ProtectedRoutes from './config/ProtectedRoutes';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
@@ -23,7 +22,6 @@ function App() {
     <>
       <Router>
         <div className="app">
-          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
