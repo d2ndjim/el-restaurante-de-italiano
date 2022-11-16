@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Socials from './Socials';
 
 function Footer() {
   const [result, showResult] = useState(false);
@@ -25,13 +26,14 @@ function Footer() {
   }, 5000);
 
   return (
-    <div className="grid grid-cols-3 gap-6 p-32 bg-black">
+    <div className="flex flex-col py-16 px-6 md:grid md:grid-cols-3 gap-8 md:gap-6 md:p-32 bg-black">
       <div className="flex flex-col gap-10">
         <h1 className="text-2xl font-bold text-white">Feliciano</h1>
-        <p className="pr-16 text-xl leading-10 text-[#B4B6B9]">
+        <p className="md:pr-16 text-xl leading-8 md:leading-10 text-[#B4B6B9]">
           Far far away, behind the word mountains, far from the countries
           Vokalia and Consonantia, there live the blind texts.
         </p>
+        <Socials />
       </div>
       <div className="flex flex-col gap-10">
         <h1 className="text-2xl font-bold text-white">Open Hours</h1>
