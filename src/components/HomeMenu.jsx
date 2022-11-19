@@ -1,15 +1,72 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { useAuth } from '../config/ProtectedRoutes';
 import { fetchHomeMenu, selectMenus } from '../features/menu/menuSlice';
+import { makeOrder, selectOrders, reset } from '../features/order/orderSlice';
 import Styles from '../pages/Home.module.css';
+import Spinner from './Spinner';
 
 function HomeMenu() {
+  const [saved, setSaved] = useState(false);
   const dispatch = useDispatch();
   const menus = useSelector(selectMenus);
+  const {
+    isLoading, isError, isSuccess, message,
+  } = useSelector(selectOrders);
+  // console.log(isError);
+  // console.log(message);
+  const isAuth = useAuth();
 
   useEffect(() => {
     dispatch(fetchHomeMenu());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isError) {
+      Swal.fire('Error!', message, 'error');
+    }
+
+    if (isSuccess) {
+      setSaved(true);
+      Swal.fire('Confirmed!', 'Your order has been confirmed.', 'success');
+    }
+
+    dispatch(reset());
+  }, [isError, isSuccess, message, dispatch]);
+
+  const handleClick = (id) => {
+    if (isAuth) {
+      Swal.fire({
+        title: 'Confirm Order?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#C8A97E',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirm!',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          dispatch(makeOrder(id));
+        }
+      });
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please login to make order!',
+      });
+    }
+  };
+
+  if (saved) {
+    return <Navigate to="/orders" replace />;
+  }
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="pb-24">
@@ -46,6 +103,7 @@ function HomeMenu() {
                 <button
                   type="button"
                   className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                  onClick={() => handleClick(menu.id)}
                 >
                   Order now
                 </button>

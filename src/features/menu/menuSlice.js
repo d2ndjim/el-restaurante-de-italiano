@@ -19,6 +19,6 @@ export const menuSlice = createSlice({
   },
 });
 
-export const { reset } = menuSlice.actions;
+// export const { reset } = menuSlice.actions;
 export const selectMenus = (state) => state.homeMenu;
 export default menuSlice.reducer;

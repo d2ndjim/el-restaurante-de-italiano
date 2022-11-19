@@ -3,6 +3,7 @@ import { FaSignInAlt } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 import { login, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
 
@@ -16,9 +17,18 @@ function Login() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  function notify() {
-    toast('Logged In');
-  }
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
 
   const {
     user, isLoading, isError, isSuccess, message,
@@ -33,6 +43,10 @@ function Login() {
 
     if (isSuccess || user) {
       navigate('/');
+      Toast.fire({
+        icon: 'success',
+        title: 'Signed in successfully',
+      });
     }
 
     dispatch(reset());
@@ -54,7 +68,6 @@ function Login() {
     };
 
     dispatch(login(userData));
-    notify();
   };
 
   if (isLoading) {

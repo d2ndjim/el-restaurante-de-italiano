@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { useState } from 'react';
 import { logout, reset } from '../features/auth/authSlice';
 
 function MobileNav() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
   const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
-    navigate('/');
+    window.location.reload();
   };
 
   const [isOpen, setIsOpen] = useState(false);
