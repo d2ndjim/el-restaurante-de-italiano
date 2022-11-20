@@ -65,6 +65,14 @@ li {
   font-family: inherit;
 }
 
+.menu {
+  height: 95vh;
+    width: 100%;
+    background-image: url(./assets/images/reserve.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .form-group label {
   text-align: left;
   display: block;
@@ -155,4 +163,11 @@ li {
   .abt {
     width: 50%;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+      height: 78vh;
+      width: 100%;
+    }
 }

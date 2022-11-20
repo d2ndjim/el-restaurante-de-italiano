@@ -15,11 +15,10 @@
   animation-timing-function: ease-in-out;
 }
 
-/* .card:nth-child(even) {
+.card:nth-child(3n) {
   display: flex;
-
   flex-direction: row-reverse;
-} */
+}
 
 .reserve {
   background-image: url(../assets/images/reserve.jpg);

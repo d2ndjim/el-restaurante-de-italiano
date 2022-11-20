@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useAuth } from '../config/ProtectedRoutes';
-import { fetchHomeMenu, selectMenus } from '../features/menu/menuSlice';
+import { fetchHomeMenu, selectMenus } from '../features/menu/homeMenuSlice';
 import { makeOrder, selectOrders, reset } from '../features/order/orderSlice';
 import Styles from '../pages/Home.module.css';
 import Spinner from './Spinner';
@@ -15,8 +15,7 @@ function HomeMenu() {
   const {
     isLoading, isError, isSuccess, message,
   } = useSelector(selectOrders);
-  // console.log(isError);
-  // console.log(message);
+
   const isAuth = useAuth();
 
   useEffect(() => {
@@ -78,7 +77,7 @@ function HomeMenu() {
       </div>
       <div className="text-center py-10 px-4 md:px-32">
         <div
-          className={`${Styles.card} flex flex-col md:grid md:grid-cols-2 gap-2 border-[1px]`}
+          className={`${Styles.card} flex-col md:grid md:grid-cols-2 gap-2 border-[1px]`}
         >
           {menus.map((menu) => (
             <div key={menu.id} className="flex flex-col md:flex-row">
