@@ -1,19 +1,21 @@
-import { HiOutlinePhone } from 'react-icons/hi';
-import { CiMail } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Menus from '../components/Menus';
+import MobileNav from '../components/MobileNav';
 
 function Menu() {
   return (
-    <>
-      <div>
-        <HiOutlinePhone />
-        <p>+234 90 9876 0067</p>
+    <div>
+      <div className="menu mb-44">
+        <Header />
+        <MobileNav />
+        <div className="mt-80 md:mt-52 flex flex-col place-items-center gap-4">
+          <h1 className="text-white text-5xl md:text-7xl font-extrabold">Specialties</h1>
+          <Link to="/" className="text-2xl text-white font-semibold">Home</Link>
+        </div>
       </div>
-      <div>
-        <CiMail />
-        <p>MENU PAGE</p>
-      </div>
-      <p>Open hours: Monday - Sunday 8:00AM - 9:00PM</p>
-    </>
+      <Menus />
+    </div>
   );
 }
 
