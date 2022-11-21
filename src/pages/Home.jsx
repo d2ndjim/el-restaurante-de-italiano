@@ -1,11 +1,11 @@
-import About from '../components/About';
-import Chef from '../components/Chef';
+import About from '../components/Home/About';
+import Chef from '../components/Home/Chef';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import HomeMenu from '../components/HomeMenu';
+import HomeMenu from '../components/Home/HomeMenu';
 import MobileNav from '../components/MobileNav';
-import Reservation from '../components/Reservation';
-import Services from '../components/Services';
+import Reservation from '../components/Home/Reservation';
+import Services from '../components/Home/Services';
 
 import Styles from './Home.module.css';
 
@@ -17,7 +17,7 @@ function Home() {
         <MobileNav />
         <div className="flex flex-col justify-center my-28 md:my-0">
           <h1
-            className={`${Styles.feliciano} text-[#c8a97e] feliciano font-extrabold text-center mt-20 text-5xl mb-10`}
+            className={`${Styles.feliciano} text-[#c09d6c] feliciano font-extrabold text-center mt-20 text-5xl mb-10`}
           >
             Feliciano
           </h1>
