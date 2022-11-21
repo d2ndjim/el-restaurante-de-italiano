@@ -19,14 +19,46 @@ function Menus() {
   const [isDrinks, setIsDrinks] = useState(false);
   const [isWines, setIsWines] = useState(false);
   const [saved, setSaved] = useState(false);
-  // const [isHover, setIsHover] = useState(false);
+  const [isHoverVegetarian, setIsHoverVegetarian] = useState(false);
+  const [isHoverNonVegetarian, setIsHoverNonVegetarian] = useState(false);
+  const [isHoverDessert, setIsHoverDessert] = useState(false);
+  const [isHoverDrink, setIsHoverDrink] = useState(false);
+  const [isHoverWine, setIsHoverWine] = useState(false);
 
-  // const handleMouseEnter = () => {
-  //   setIsHover(true);
-  // };
-  // const handleMouseLeave = () => {
-  //   setIsHover(false);
-  // };
+  const handleMouseEnterVegetarian = () => {
+    setIsHoverVegetarian(true);
+  };
+  const handleMouseLeaveVegetarian = () => {
+    setIsHoverVegetarian(false);
+  };
+
+  const handleMouseEnterNonVegetarian = () => {
+    setIsHoverNonVegetarian(true);
+  };
+  const handleMouseLeaveNonVegetarian = () => {
+    setIsHoverNonVegetarian(false);
+  };
+
+  const handleMouseEnterDessert = () => {
+    setIsHoverDessert(true);
+  };
+  const handleMouseLeaveDessert = () => {
+    setIsHoverDessert(false);
+  };
+
+  const handleMouseEnterDrink = () => {
+    setIsHoverDrink(true);
+  };
+  const handleMouseLeaveDrink = () => {
+    setIsHoverDrink(false);
+  };
+
+  const handleMouseEnterWine = () => {
+    setIsHoverWine(true);
+  };
+  const handleMouseLeaveWine = () => {
+    setIsHoverWine(false);
+  };
 
   const {
     isLoading, isError, isSuccess, message,
@@ -135,16 +167,16 @@ function Menus() {
 
   return (
     <div className="">
-      <div className="flex flex-col gap-2 px-4 md:grid md:grid-cols-5 md:gap-1 md:px-32 md:pb-9">
+      <div className="flex flex-col gap-2 px-4 md:grid md:grid-cols-5 md:gap-0 md:px-32 md:pb-9">
         <button
           type="button"
           className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleVegetarian}
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleMouseEnterVegetarian}
+          onMouseLeave={handleMouseLeaveVegetarian}
           style={
-            isVegetarian
-              ? { backgroundColor: '#C8A97E', color: 'white' }
+            isVegetarian || isHoverVegetarian
+              ? { backgroundColor: '#c09d6c', color: 'white' }
               : { backgroundColor: '#FFFFFF', color: 'black' }
           }
         >
@@ -154,9 +186,11 @@ function Menus() {
           type="button"
           className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleNonVegetarian}
+          onMouseEnter={handleMouseEnterNonVegetarian}
+          onMouseLeave={handleMouseLeaveNonVegetarian}
           style={
-            isNonVegetarian
-              ? { backgroundColor: '#C8A97E', color: 'white' }
+            isNonVegetarian || isHoverNonVegetarian
+              ? { backgroundColor: '#c09d6c', color: 'white' }
               : { backgroundColor: '#FFFFFF', color: 'black' }
           }
         >
@@ -166,9 +200,11 @@ function Menus() {
           type="button"
           className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleDessert}
+          onMouseEnter={handleMouseEnterDessert}
+          onMouseLeave={handleMouseLeaveDessert}
           style={
-            isDessert
-              ? { backgroundColor: '#C8A97E', color: 'white' }
+            isDessert || isHoverDessert
+              ? { backgroundColor: '#c09d6c', color: 'white' }
               : { backgroundColor: '#FFFFFF', color: 'black' }
           }
         >
@@ -178,9 +214,11 @@ function Menus() {
           type="button"
           className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleDrink}
+          onMouseEnter={handleMouseEnterDrink}
+          onMouseLeave={handleMouseLeaveDrink}
           style={
-            isDrinks
-              ? { backgroundColor: '#C8A97E', color: 'white' }
+            isDrinks || isHoverDrink
+              ? { backgroundColor: '#c09d6c', color: 'white' }
               : { backgroundColor: '#FFFFFF', color: 'black' }
           }
         >
@@ -190,9 +228,11 @@ function Menus() {
           type="button"
           className="py-4 md:py-6 text-white text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleWine}
+          onMouseEnter={handleMouseEnterWine}
+          onMouseLeave={handleMouseLeaveWine}
           style={
-            isWines
-              ? { backgroundColor: '#C8A97E', color: 'white' }
+            isWines || isHoverWine
+              ? { backgroundColor: '#c09d6c', color: 'white' }
               : { backgroundColor: '#FFFFFF', color: 'black' }
           }
         >

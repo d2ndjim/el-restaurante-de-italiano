@@ -1,7 +1,7 @@
-import owner from '../assets/images/chef-4.jpg';
-import headChef from '../assets/images/chef-2.jpg';
-import Chef1 from '../assets/images/chef-1.jpg';
-import Chef2 from '../assets/images/chef-3.jpg';
+import owner from '../../assets/images/chef-4.jpg';
+import headChef from '../../assets/images/chef-2.jpg';
+import Chef1 from '../../assets/images/chef-1.jpg';
+import Chef2 from '../../assets/images/chef-3.jpg';
 
 function Chef() {
   return (

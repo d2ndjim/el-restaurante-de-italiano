@@ -1,5 +1,5 @@
-import about from '../assets/images/about.jpg';
-import about2 from '../assets/images/about2.jpg';
+import about from '../../assets/images/about.jpg';
+import about2 from '../../assets/images/about2.jpg';
 
 function About() {
   return (
