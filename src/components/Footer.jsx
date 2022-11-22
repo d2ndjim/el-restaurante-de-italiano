@@ -26,7 +26,7 @@ function Footer() {
   }, 5000);
 
   return (
-    <div className="flex flex-col py-16 px-6 md:grid md:grid-cols-3 gap-8 md:gap-6 md:p-32 bg-black">
+    <div className="flex flex-col py-16 px-6 lg:grid lg:grid-cols-3 gap-8 lg:gap-6 lg:p-32 bg-black">
       <div className="flex flex-col gap-10">
         <h1 className="text-2xl font-bold text-white">Feliciano</h1>
         <p className="md:pr-16 text-xl leading-8 md:leading-10 text-[#B4B6B9]">

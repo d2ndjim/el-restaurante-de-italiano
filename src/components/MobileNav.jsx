@@ -22,7 +22,7 @@ function MobileNav() {
   };
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <nav className="text-white bg-[#000000]">
         <div className="flex justify-between items-center p-4">
           <h3 className="text-2xl font-extrabold">Feliciano</h3>
