@@ -18,13 +18,20 @@ function Home() {
         <div className="flex flex-col justify-center my-28 md:my-0">
           <h1
             className={`${Styles.feliciano} text-[#c09d6c] feliciano font-extrabold text-center mt-20 text-5xl mb-10`}
+            data-aos="fade-up"
           >
             Feliciano
           </h1>
-          <h1 className="hidden md:block md:text-white md:text-center md:text-7xl md:font-extrabold">
+          <h1
+            className="hidden md:block md:text-white md:text-center md:text-7xl md:font-extrabold"
+            data-aos="fade-up"
+          >
             BEST RESTAURANT
           </h1>
-          <h1 className="text-white text-center text-4xl font-extrabold md:hidden">
+          <h1
+            className="text-white text-center text-4xl font-extrabold md:hidden"
+            data-aos="fade-up"
+          >
             BEST
             {' '}
             <br />

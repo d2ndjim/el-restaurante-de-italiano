@@ -33,7 +33,10 @@ function Contact() {
       <div className="menu">
         <Header />
         <MobileNav />
-        <div className="mt-80 md:mt-52 flex flex-col place-items-center gap-4">
+        <div
+          className="mt-80 md:mt-52 flex flex-col place-items-center gap-4"
+          data-aos="fade-up"
+        >
           <h1 className="text-white text-5xl md:text-7xl font-extrabold">
             Contact us
           </h1>
