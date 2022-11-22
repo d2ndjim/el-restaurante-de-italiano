@@ -15,7 +15,7 @@ function Header() {
   };
 
   return (
-    <header className="hidden md:block">
+    <header className="hidden lg:block">
       <div className="top-header flex justify-between text-[#A1A1A2] px-36 py-4 font-bold">
         <div className="flex gap-2 items-center">
           <HiOutlinePhone className="text-2xl" />

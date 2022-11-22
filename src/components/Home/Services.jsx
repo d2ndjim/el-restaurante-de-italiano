@@ -4,16 +4,16 @@ import { MdBusiness } from 'react-icons/md';
 
 function Services() {
   return (
-    <div className="my-32 bg-[#FAFAFA] flex flex-col gap-10 py-20 px-4 md:py-28 md:px-24">
+    <div className="my-32 bg-[#FAFAFA] flex flex-col gap-10 py-20 px-4 lg:py-28 lg:px-24">
       <div className="flex flex-col items-center">
         <h1 className="text-5xl md:text-7xl text-[#c8a97e] font-bold">
           Services
         </h1>
-        <h2 className="text-4xl md:text-7xl font-bold">Catering Services</h2>
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold">Catering Services</h2>
       </div>
       <div className="grid grid-cols-1 gap-12 md:grid-cols-3 py-16 px-6">
         <div
-          className="flex flex-col gap-6 items-center justify-center"
+          className="flex flex-col gap-4 items-center justify-center"
           data-aos="fade-up"
         >
           <HiOutlineCake className="text-6xl text-[#C8A97E]" />

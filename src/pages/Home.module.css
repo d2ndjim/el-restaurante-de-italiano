@@ -70,3 +70,10 @@
     }
 
 }
+
+@media only screen and (min-width: 768) {
+  .content {
+    width: 100%;
+  }
+  
+} 

@@ -73,11 +73,11 @@ function HomeMenu() {
         <h1 className="text-4xl md:text-8xl font-bold text-[#C8A97E]">
           Specialties
         </h1>
-        <h1 className="text-5xl font-bold md:text-7xl">Our Menu</h1>
+        <h1 className="text-5xl md:text-6xl font-bold lg:text-7xl">Our Menu</h1>
       </div>
-      <div className="text-center py-10 px-4 md:px-32">
+      <div className="text-center py-10 px-4 lg:px-32">
         <div
-          className={`${Styles.card} flex-col md:grid md:grid-cols-2 gap-2 border-[1px]`}
+          className={`${Styles.card} flex-col lg:grid lg:grid-cols-2 gap-2 border-[1px]`}
         >
           {menus.map((menu) => (
             <div key={menu.id} className="flex flex-col md:flex-row">
