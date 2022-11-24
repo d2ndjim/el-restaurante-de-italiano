@@ -18,9 +18,9 @@ function Header() {
     <header className="hidden lg:block">
       <div className="top-header flex justify-between text-[#A1A1A2] px-36 py-4 font-bold">
         <div className="flex gap-2 items-center">
-          <HiOutlinePhone className="text-2xl" />
+          <HiOutlinePhone className="text-2xl font-bold" />
           <a id="phone" href="tel:09098760067">
-            <p>+234 90 9876 0067</p>
+            <p className="font-bold">+234 90 9876 0067</p>
           </a>
         </div>
         <div className="flex gap-2 items-center">
@@ -31,7 +31,7 @@ function Header() {
         </div>
         <p>Open hours: Monday - Sunday 8:00AM - 9:00PM</p>
       </div>
-      <nav className="flex gap-x-96 items-center px-36 py-8 text-white">
+      <nav className="flex gap-x-72 items-center px-24 py-8 text-white">
         <h3 className="text-2xl font-extrabold">Feliciano</h3>
         <ul className="flex gap-x-12 text-lg font-semibold">
           {user ? (

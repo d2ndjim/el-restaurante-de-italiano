@@ -167,10 +167,10 @@ function Menus() {
 
   return (
     <div className="">
-      <div className="flex flex-col gap-2 px-4 md:grid md:grid-cols-5 md:gap-0 md:px-32 md:pb-9">
+      <div className="flex flex-col gap-2 px-4 md:grid md:grid-cols-5 md:gap-0 lg:px-32 md:pb-9">
         <button
           type="button"
-          className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
+          className="py-4 md:py-2 md:text-base lg:text-xl lg:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleVegetarian}
           onMouseEnter={handleMouseEnterVegetarian}
           onMouseLeave={handleMouseLeaveVegetarian}
@@ -184,7 +184,7 @@ function Menus() {
         </button>
         <button
           type="button"
-          className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
+          className="py-4 md:text-base lg:text-xl lg:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleNonVegetarian}
           onMouseEnter={handleMouseEnterNonVegetarian}
           onMouseLeave={handleMouseLeaveNonVegetarian}
@@ -198,7 +198,7 @@ function Menus() {
         </button>
         <button
           type="button"
-          className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
+          className="py-4 md:text-base lg:text-xl lg:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleDessert}
           onMouseEnter={handleMouseEnterDessert}
           onMouseLeave={handleMouseLeaveDessert}
@@ -212,7 +212,7 @@ function Menus() {
         </button>
         <button
           type="button"
-          className="py-4 md:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
+          className="py-4 md:text-base lg:text-xl lg:py-6 text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleDrink}
           onMouseEnter={handleMouseEnterDrink}
           onMouseLeave={handleMouseLeaveDrink}
@@ -226,7 +226,7 @@ function Menus() {
         </button>
         <button
           type="button"
-          className="py-4 md:py-6 text-white text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
+          className="py-4 md:text-base lg:text-xl lg:py-6 text-white text-xl font-bold hover:bg-[#C8A97E] hover:text-white"
           onClick={handleWine}
           onMouseEnter={handleMouseEnterWine}
           onMouseLeave={handleMouseLeaveWine}
@@ -239,10 +239,10 @@ function Menus() {
           Wines
         </button>
       </div>
-      <div className="text-center py-10 px-4 md:px-32 mb-28">
+      <div className="text-center py-10 px-4 lg:px-32 mb-28">
         {isVegetarian && (
           <div
-            className="flex flex-col md:grid md:grid-cols-2 gap-2 border-[1px]"
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-2 border-[1px]"
             data-aos="fade-up"
           >
             {vegetarians.map((menu) => (
@@ -281,7 +281,7 @@ function Menus() {
         )}
         {isNonVegetarian && (
           <div
-            className="flex flex-col md:grid md:grid-cols-2 gap-2 border-[1px]"
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-2 border-[1px]"
             data-aos="fade-up"
           >
             {nonVegetarians.map((menu) => (
@@ -320,7 +320,7 @@ function Menus() {
         )}
         {isDessert && (
           <div
-            className="flex flex-col md:grid md:grid-cols-2 gap-2 border-[1px]"
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-2 border-[1px]"
             data-aos="fade-up"
           >
             {desserts.map((menu) => (
@@ -359,7 +359,7 @@ function Menus() {
         )}
         {isDrinks && (
           <div
-            className="flex flex-col md:grid md:grid-cols-2 gap-2 border-[1px]"
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-2 border-[1px]"
             data-aos="fade-up"
           >
             {drinks.map((menu) => (
@@ -398,7 +398,7 @@ function Menus() {
         )}
         {isWines && (
           <div
-            className="flex flex-col md:grid md:grid-cols-2 gap-2 border-[1px]"
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-2 border-[1px]"
             data-aos="fade-up"
           >
             {wines.map((menu) => (

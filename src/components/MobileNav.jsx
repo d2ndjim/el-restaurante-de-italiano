@@ -25,11 +25,11 @@ function MobileNav() {
     <div className="lg:hidden">
       <nav className="text-white bg-[#000000]">
         <div className="flex justify-between items-center p-4">
-          <h3 className="text-2xl font-extrabold">Feliciano</h3>
+          <h3 className="text-2xl md:text-3xl font-extrabold">Feliciano</h3>
           <button type="button" onClick={handleNav}>
             <AiOutlineMenu
               size={25}
-              className="text-[#808291] font-extrabold"
+              className="text-[#808291] font-bold"
             />
           </button>
         </div>

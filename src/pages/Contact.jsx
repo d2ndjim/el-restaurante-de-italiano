@@ -52,7 +52,7 @@ function Contact() {
         <form
           onSubmit={sendEmail}
           ref={formRef}
-          className="flex flex-col gap-4 w-4/5 md:w-7/12"
+          className="flex flex-col gap-4 w-4/5 lg:w-7/12"
         >
           <div className="flex flex-col md:flex-row gap-4 md:gap-8">
             <input
@@ -79,7 +79,7 @@ function Contact() {
           />
           <button
             type="submit"
-            className="m-auto md:text-xl font-bold text-white bg-[#C8A97E] mt-2 p-4 border-2 border-solid border-[#C8A97E] w-3/5 md:w-1/4 hover:bg-white hover:text-[#C8A97E]"
+            className="m-auto md:text-xl font-bold text-white bg-[#C8A97E] mt-2 p-4 border-2 border-solid border-[#C8A97E] w-3/5 lg:w-1/4 hover:bg-white hover:text-[#C8A97E]"
           >
             Send Message
           </button>
