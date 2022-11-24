@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { login, reset } from '../features/auth/authSlice';
-import Spinner from '../components/Spinner';
+import Spinner from '../components/Shared/Spinner';
 
 function Login() {
   const [formData, setFormData] = useState({

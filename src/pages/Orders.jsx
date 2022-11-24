@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import MobileNav from '../components/MobileNav';
+import Header from '../components/Shared/Header';
+import MobileNav from '../components/Shared/MobileNav';
 
 function Orders() {
   return (
@@ -13,7 +13,7 @@ function Orders() {
           data-aos="fade-up"
         >
           <h1 className="text-white text-5xl md:text-7xl font-extrabold">
-            Contact us
+            Your Orders
           </h1>
           <Link to="/menu" className="text-2xl text-white font-semibold">
             Menu

@@ -6,7 +6,7 @@ import { useAuth } from '../../config/ProtectedRoutes';
 import { fetchHomeMenu, selectMenus } from '../../features/menu/homeMenuSlice';
 import { makeOrder, selectOrders, reset } from '../../features/order/orderSlice';
 import Styles from '../../pages/Home.module.css';
-import Spinner from '../Spinner';
+import Spinner from '../Shared/Spinner';
 
 function HomeMenu() {
   const [saved, setSaved] = useState(false);

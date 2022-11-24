@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { HiOutlinePhone } from 'react-icons/hi';
 import { CiMail } from 'react-icons/ci';
-import { logout, reset } from '../features/auth/authSlice';
+import { logout, reset } from '../../features/auth/authSlice';
 
 function Header() {
   // const navigate = useNavigate();

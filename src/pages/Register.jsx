@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { register, reset } from '../features/auth/authSlice';
-import Spinner from '../components/Spinner';
+import Spinner from '../components/Shared/Spinner';
 
 function Register() {
   const [formData, setFormData] = useState({

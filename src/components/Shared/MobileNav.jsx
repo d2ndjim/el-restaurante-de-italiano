@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { useState } from 'react';
-import { logout, reset } from '../features/auth/authSlice';
+import { logout, reset } from '../../features/auth/authSlice';
 
 function MobileNav() {
   // const navigate = useNavigate();

@@ -15,7 +15,7 @@ function Home() {
       <div className={`${Styles.content} w-full`}>
         <Header />
         <MobileNav />
-        <div className="flex flex-col justify-center my-28 md:my-0">
+        <div className="flex flex-col justify-center my-28 lg:my-0">
           <h1
             className={`${Styles.feliciano} text-[#c09d6c] feliciano font-extrabold text-center mt-20 text-5xl mb-10`}
             data-aos="fade-up"
