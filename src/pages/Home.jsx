@@ -1,9 +1,9 @@
 import About from '../components/Home/About';
 import Chef from '../components/Home/Chef';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Footer from '../components/Shared/Footer';
+import Header from '../components/Shared/Header';
 import HomeMenu from '../components/Home/HomeMenu';
-import MobileNav from '../components/MobileNav';
+import MobileNav from '../components/Shared/MobileNav';
 import Reservation from '../components/Home/Reservation';
 import Services from '../components/Home/Services';
 
