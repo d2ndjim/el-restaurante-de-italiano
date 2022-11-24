@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import MobileNav from '../components/MobileNav';
-import Footer from '../components/Footer';
+import Header from '../components/Shared/Header';
+import MobileNav from '../components/Shared/MobileNav';
+import Footer from '../components/Shared/Footer';
 
 function Contact() {
   const [result, showResult] = useState(false);

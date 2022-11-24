@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useAuth } from '../config/ProtectedRoutes';
-import { fetchDessert, selectDesserts } from '../features/menu/dessertSlice';
-import { fetchDrinks, selectDrinks } from '../features/menu/drinkSlice';
-import { fetchNonVegetarian, selectNonVegetarian } from '../features/menu/nonVegetarianSlice';
-import { fetchVegetarian, selectVegetarian } from '../features/menu/vegetarianSlice';
-import { fetchWines, selectWines } from '../features/menu/wineSlice';
-import { makeOrder, selectOrders, reset } from '../features/order/orderSlice';
-import Spinner from './Spinner';
+import { useAuth } from '../../config/ProtectedRoutes';
+import { fetchDessert, selectDesserts } from '../../features/menu/dessertSlice';
+import { fetchDrinks, selectDrinks } from '../../features/menu/drinkSlice';
+import { fetchNonVegetarian, selectNonVegetarian } from '../../features/menu/nonVegetarianSlice';
+import { fetchVegetarian, selectVegetarian } from '../../features/menu/vegetarianSlice';
+import { fetchWines, selectWines } from '../../features/menu/wineSlice';
+import { makeOrder, selectOrders, reset } from '../../features/order/orderSlice';
+import Spinner from '../Shared/Spinner';
 
 function Menus() {
   const dispatch = useDispatch();
