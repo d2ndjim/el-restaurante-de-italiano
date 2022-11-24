@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Footer from '../components/Shared/Footer';
 import Header from '../components/Shared/Header';
-import Menus from '../components/Menus';
+import Menus from '../components/MenuOrders/Menus';
 import MobileNav from '../components/Shared/MobileNav';
 
 function Menu() {
