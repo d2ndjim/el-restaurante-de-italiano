@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Order from '../components/MenuOrders/Orders';
 import Header from '../components/Shared/Header';
 import MobileNav from '../components/Shared/MobileNav';
 
@@ -20,6 +21,7 @@ function Orders() {
           </Link>
         </div>
       </div>
+      <Order />
     </div>
   );
 }
