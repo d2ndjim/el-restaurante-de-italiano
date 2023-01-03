@@ -45,9 +45,6 @@ function MobileNav() {
                     <Link to="/menu">Menu</Link>
                   </li>
                   <li>
-                    <Link to="/orders">My Orders</Link>
-                  </li>
-                  <li>
                     <Link to="/contact">Contact</Link>
                   </li>
                   <li>

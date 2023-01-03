@@ -10,7 +10,6 @@ import Register from './pages/Register';
 import ProtectedRoutes from './config/ProtectedRoutes';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
-import Orders from './pages/Orders';
 import 'aos/dist/aos.css';
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route element={<ProtectedRoutes />}>
               <Route path="/menu" element={<Menu />} />
-              <Route path="/orders" element={<Orders />} />
             </Route>
           </Routes>
         </div>

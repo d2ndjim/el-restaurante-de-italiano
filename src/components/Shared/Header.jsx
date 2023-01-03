@@ -31,7 +31,7 @@ function Header() {
         </div>
         <p>Open hours: Monday - Sunday 8:00AM - 9:00PM</p>
       </div>
-      <nav className="flex gap-x-72 items-center px-24 py-8 text-white">
+      <nav className="flex justify-between items-center px-24 py-8 text-white">
         <h3 className="text-2xl font-extrabold">Feliciano</h3>
         <ul className="flex gap-x-12 text-lg font-semibold">
           {user ? (
@@ -41,9 +41,6 @@ function Header() {
               </li>
               <li>
                 <Link to="/menu">Menu</Link>
-              </li>
-              <li>
-                <Link to="/orders">My Orders</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
