@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/desserts';
+const API_URL = 'http://localhost:3000/menus/categorized?category=Dessert';
 
 export const fetchDessert = createAsyncThunk('menu/fetchDessert', async () => {
   const response = await fetch(API_URL);
