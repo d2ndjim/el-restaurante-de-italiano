@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/non_vegetarian';
+const API_URL = 'http://localhost:3000/menus/categorized?category=Non-Vegetarian';
 
 export const fetchNonVegetarian = createAsyncThunk(
   'menu/fetchNonVegetarian',
