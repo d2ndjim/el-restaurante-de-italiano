@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react/prop-types */
+import { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useAuth } from '../../config/ProtectedRoutes';
+// import { useAuth } from '../../config/ProtectedRoutes';
+import { CartContext } from '../../CartContext';
 import { fetchDessert, selectDesserts } from '../../features/menu/dessertSlice';
 import { fetchDrinks, selectDrinks } from '../../features/menu/drinkSlice';
 import { fetchNonVegetarian, selectNonVegetarian } from '../../features/menu/nonVegetarianSlice';
 import { fetchVegetarian, selectVegetarian } from '../../features/menu/vegetarianSlice';
 import { fetchWines, selectWines } from '../../features/menu/wineSlice';
-import { makeOrder, selectOrders, reset } from '../../features/order/orderSlice';
+// remove makeOrder
+import { selectOrders, reset } from '../../features/order/orderSlice';
 import Spinner from '../Shared/Spinner';
 
 function Menus() {
@@ -24,6 +27,8 @@ function Menus() {
   const [isHoverDessert, setIsHoverDessert] = useState(false);
   const [isHoverDrink, setIsHoverDrink] = useState(false);
   const [isHoverWine, setIsHoverWine] = useState(false);
+
+  const cart = useContext(CartContext);
 
   const handleMouseEnterVegetarian = () => {
     setIsHoverVegetarian(true);
@@ -64,31 +69,31 @@ function Menus() {
     isLoading, isError, isSuccess, message,
   } = useSelector(selectOrders);
 
-  const isAuth = useAuth();
+  // const isAuth = useAuth();
 
-  const handleClick = (id) => {
-    if (isAuth) {
-      Swal.fire({
-        title: 'Confirm Order?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#C8A97E',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Confirm!',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          dispatch(makeOrder(id));
-        }
-      });
-    } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Please login to make order!',
-      });
-    }
-  };
+  // const handleClick = (id) => {
+  //   if (isAuth) {
+  //     Swal.fire({
+  //       title: 'Confirm Order?',
+  //       text: "You won't be able to revert this!",
+  //       icon: 'warning',
+  //       showCancelButton: true,
+  //       confirmButtonColor: '#C8A97E',
+  //       cancelButtonColor: '#d33',
+  //       confirmButtonText: 'Confirm!',
+  //     }).then((result) => {
+  //       if (result.isConfirmed) {
+  //         dispatch(makeOrder(id));
+  //       }
+  //     });
+  //   } else {
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops...',
+  //       text: 'Please login to make order!',
+  //     });
+  //   }
+  // };
 
   function handleVegetarian() {
     setIsVegetarian(true);
@@ -267,13 +272,23 @@ function Menus() {
                   <p className="text-start text-xl md:text-base md:w-[70%] mt-2">
                     {menu.description}
                   </p>
-                  <button
-                    type="button"
-                    className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
-                    onClick={() => handleClick(menu.id)}
-                  >
-                    Order now
-                  </button>
+                  {cart.getProductQuantity(menu.id) > 0 ? (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#DC3545] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.deleteFromCart(menu.id)}
+                    >
+                      Remove from cart
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.addOneToCart(menu.id)}
+                    >
+                      Add to cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -306,13 +321,23 @@ function Menus() {
                   <p className="text-start text-xl md:text-base md:w-[70%] mt-2">
                     {menu.description}
                   </p>
-                  <button
-                    type="button"
-                    className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
-                    onClick={() => handleClick(menu.id)}
-                  >
-                    Order now
-                  </button>
+                  {cart.getProductQuantity(menu.id) > 0 ? (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#DC3545] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.deleteFromCart(menu.id)}
+                    >
+                      Remove from cart
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.addOneToCart(menu.id)}
+                    >
+                      Add to cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -345,13 +370,23 @@ function Menus() {
                   <p className="text-start text-xl md:text-base md:w-[70%] mt-2">
                     {menu.description}
                   </p>
-                  <button
-                    type="button"
-                    className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
-                    onClick={() => handleClick(menu.id)}
-                  >
-                    Order now
-                  </button>
+                  {cart.getProductQuantity(menu.id) > 0 ? (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#DC3545] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.deleteFromCart(menu.id)}
+                    >
+                      Remove from cart
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.addOneToCart(menu.id)}
+                    >
+                      Add to cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -384,13 +419,23 @@ function Menus() {
                   <p className="text-start text-xl md:text-base md:w-[70%] mt-2">
                     {menu.description}
                   </p>
-                  <button
-                    type="button"
-                    className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
-                    onClick={() => handleClick(menu.id)}
-                  >
-                    Order now
-                  </button>
+                  {cart.getProductQuantity(menu.id) > 0 ? (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#DC3545] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.deleteFromCart(menu.id)}
+                    >
+                      Remove from cart
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.addOneToCart(menu.id)}
+                    >
+                      Add to cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -423,13 +468,23 @@ function Menus() {
                   <p className="text-start text-xl md:text-base md:w-[70%] mt-2">
                     {menu.description}
                   </p>
-                  <button
-                    type="button"
-                    className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
-                    onClick={() => handleClick(menu.id)}
-                  >
-                    Order now
-                  </button>
+                  {cart.getProductQuantity(menu.id) > 0 ? (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#DC3545] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.deleteFromCart(menu.id)}
+                    >
+                      Remove from cart
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="border-solid text-[20px] md:text-xl border-1 bg-[#C8A97E] md:py-3 py-3 px-4 md:px-6 mt-2 text-white rounded-lg"
+                      onClick={() => cart.addOneToCart(menu.id)}
+                    >
+                      Add to cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
