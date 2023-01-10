@@ -1,4 +1,6 @@
+/* eslint-disable import/no-named-as-default */
 import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Aos from 'aos';
@@ -11,6 +13,7 @@ import ProtectedRoutes from './config/ProtectedRoutes';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 import 'aos/dist/aos.css';
+import CartProvider from './CartContext';
 
 function App() {
   useEffect(() => {
@@ -18,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <CartProvider>
       <Router>
         <div className="app">
           <Routes>
@@ -33,7 +36,7 @@ function App() {
         </div>
       </Router>
       <ToastContainer />
-    </>
+    </CartProvider>
   );
 }
 
