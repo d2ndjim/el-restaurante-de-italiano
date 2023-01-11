@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
@@ -5,7 +6,7 @@ import Header from '../components/Shared/Header';
 import MobileNav from '../components/Shared/MobileNav';
 import Footer from '../components/Shared/Footer';
 
-function Contact() {
+function Contact({ handleShow }) {
   const [result, showResult] = useState(false);
   const formRef = useRef();
 
@@ -31,7 +32,7 @@ function Contact() {
   return (
     <div>
       <div className="menu">
-        <Header />
+        <Header handleShow={handleShow} />
         <MobileNav />
         <div
           className="mt-80 md:mt-52 flex flex-col place-items-center gap-4"

@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import Footer from '../components/Shared/Footer';
 import Header from '../components/Shared/Header';
 import Menus from '../components/MenuOrders/Menus';
 import MobileNav from '../components/Shared/MobileNav';
 
-function Menu() {
+function Menu({ handleShow }) {
   return (
     <div>
       <div className="menu mb-44">
-        <Header />
+        <Header handleShow={handleShow} />
         <MobileNav />
         <div
           className="mt-80 md:mt-52 flex flex-col place-items-center gap-4"

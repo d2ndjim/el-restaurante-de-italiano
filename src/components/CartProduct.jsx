@@ -22,7 +22,7 @@ function CartProduct(props) {
         $
         {(quantity * productData.price).toFixed(2)}
       </p>
-      <div className="border-solid border-1 bg-[#C8A97E] px-8 py-1 self-center rounded-lg text-center">
+      <div className="border-solid border-1 bg-[#C8A97E] px-4 py-2 self-start rounded-lg text-center">
         <button type="button" onClick={() => cart.deleteFromCart(id)}>
           Remove
         </button>

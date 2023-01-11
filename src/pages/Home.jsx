@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import About from '../components/Home/About';
 import Chef from '../components/Home/Chef';
 import Footer from '../components/Shared/Footer';
@@ -9,11 +10,11 @@ import Services from '../components/Home/Services';
 
 import Styles from './Home.module.css';
 
-function Home() {
+function Home({ handleShow }) {
   return (
     <div className="main">
       <div className={`${Styles.content} w-full`}>
-        <Header />
+        <Header handleShow={handleShow} />
         <MobileNav />
         <div className="flex flex-col justify-center my-28 lg:my-0">
           <h1
